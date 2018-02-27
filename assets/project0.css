@@ -1,3 +1,17 @@
-body {
-  padding: 50px;
-}
+header {
+  position: relative;
+  padding: 50px; }
+
+header #title-box {
+  margin-left: -100px;
+  padding-left: 100px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  width: 75%;
+  border-radius: 25px;
+  background: #3498db; }
+  @media (max-width: 599px) {
+    header #title-box {
+      width: 100%; } }
+
+/*# sourceMappingURL=project0.css.map */
