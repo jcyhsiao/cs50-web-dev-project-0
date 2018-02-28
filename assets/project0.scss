@@ -1,15 +1,12 @@
-$padding: 10px;
+$base-spacing: 15px;
 $theme-background: rgb(52, 152, 219);
-$theme-highlight: rgba(9, 112, 84, 0.7);
+$theme-highlight: rgba(9, 112, 84, 0.5);
 $theme-action: rgb(223, 123, 2);
+$theme-scarlet: rgb(187,0,0);
 $theme-text-default: white;
 
 @mixin for-phone-only {
   @media (max-width: 599px) { @content; }
-}
-
-header {
-  position: relative;
 }
 
 header #title-box {
@@ -20,24 +17,24 @@ header #title-box {
   padding-bottom: $padding / 5;
   border-radius: 25px;
   */
-  padding: $padding;
+  padding: $base-spacing;
   background: $theme-background;
-  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
 
-  @include for-phone-only {
-    margin-left: 0;
-  }
 }
 
 header h1 {
   font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
   font-weight: bolder;
   color: $theme-text-default;
+  margin-right: $base-spacing;
 }
 
-.mainCaption {
+.main-caption {
   font-family: Helvetica, Arial, sans-serif;
   color: white;
-  background: $theme-highlight;
-  border-radius: 10px;
+  background-color: $theme-highlight;
+  padding: $base-spacing / 2;
+  border-radius: $base-spacing;
 }
