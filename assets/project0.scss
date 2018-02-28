@@ -1,5 +1,6 @@
 $base-spacing: 15px;
-$theme-background: rgb(52, 152, 219);
+$theme-background-main: rgb(52, 152, 219);
+$theme-background-toolbar-dark: rgba(0,0,0,0.3);
 $theme-highlight: rgba(9, 112, 84, 0.5);
 $theme-action: rgb(223, 123, 2);
 $theme-scarlet: rgb(187,0,0);
@@ -9,32 +10,66 @@ $theme-text-default: white;
   @media (max-width: 599px) { @content; }
 }
 
-header #title-box {
-  /*
-  margin-left: -$padding * 2;
-  padding-left: $padding * 2;
-  padding-top: $padding / 5;
-  padding-bottom: $padding / 5;
-  border-radius: 25px;
-  */
-  padding: $base-spacing;
-  background: $theme-background;
-  display: flex;
-  flex-wrap: wrap;
+@mixin default-box-shadow-dark {
+  box-shadow: 2.5px 2.5px 1px 1px rgba(0,0,0,0.3);
+}
+
+header {
+  background: $theme-background-main;
+
+
+  #title-box {
+    /*
+    margin-left: -$padding * 2;
+    padding-left: $padding * 2;
+    padding-top: $padding / 5;
+    padding-bottom: $padding / 5;
+    border-radius: 25px;
+    */
+    padding: $base-spacing;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  h1 {
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+    font-weight: bolder;
+    color: $theme-text-default;
+    margin-right: $base-spacing;
+  }
+
+  .main-caption {
+    font-family: Helvetica, Arial, sans-serif;
+    color: white;
+    background-color: $theme-highlight;
+    padding: $base-spacing / 2;
+    // border-radius: $base-spacing;
+  }
+
+  nav {
+    background: $theme-background-toolbar-dark;
+    padding: $base-spacing;
+
+    ul {
+      list-style: none;
+      color: white;
+      display: flex;
+      flex-wrap: wrap;
+      margin-left: $base-spacing;
+      margin-right: $base-spacing;
+      padding-left: 0;
+      margin-bottom: 0;
+    }
+
+    li {
+      display: inline-block;
+      background-color: $theme-action;
+      padding: $base-spacing / 2;
+      margin: $base-spacing / 4;
+      border-radius: 5px;
+      @include default-box-shadow-dark;
+    }
+  }
 
 }
 
-header h1 {
-  font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
-  font-weight: bolder;
-  color: $theme-text-default;
-  margin-right: $base-spacing;
-}
-
-.main-caption {
-  font-family: Helvetica, Arial, sans-serif;
-  color: white;
-  background-color: $theme-highlight;
-  padding: $base-spacing / 2;
-  border-radius: $base-spacing;
-}
