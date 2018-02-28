@@ -41,7 +41,7 @@ header {
   .main-caption {
     font-family: Helvetica, Arial, sans-serif;
     color: white;
-    background-color: $theme-highlight;
+    background-color: purple;
     padding: $base-spacing / 2;
     // border-radius: $base-spacing;
   }
@@ -70,6 +70,16 @@ header {
       @include default-box-shadow-dark;
     }
   }
+}
 
+main {
+  padding: $base-spacing;
+  margin: $base-spacing;
+
+  article {
+    h2 {
+      background: $theme-background-main;
+    }
+  }
 }
 
