@@ -11,7 +11,11 @@ $theme-text-default: white;
 }
 
 @mixin default-box-shadow-dark {
-  box-shadow: 2.5px 2.5px 1px 1px rgba(0,0,0,0.3);
+  box-shadow: 0px 2px 5px 1px rgba(0,0,0,0.3);
+}
+
+body {
+  background: #FCECD5;
 }
 
 header {
@@ -41,7 +45,8 @@ header {
   .main-caption {
     font-family: Helvetica, Arial, sans-serif;
     color: white;
-    background-color: purple;
+    background-color: rgba(67, 24, 238, 0.5);
+    border-radius: 10px;
     padding: $base-spacing / 2;
     // border-radius: $base-spacing;
   }
@@ -79,6 +84,28 @@ main {
   article {
     h2 {
       background: $theme-background-main;
+      color: white;
+      padding: $base-spacing / 2;
+      width: 30%;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+      margin-bottom: 0px;
+      @include default-box-shadow-dark;
+
+      @include for-phone-only {
+          width: 100%;
+      }
+    }
+
+    .article-content {
+      margin-top: 0;
+      //  border-top: 10px solid $theme-background-main;
+      background: white;
+      padding: $base-spacing;
+      border-bottom-left-radius: 5px;
+      border-bottom-right-radius: 5px;
+      border-top-right-radius: 5px;
+      @include default-box-shadow-dark;
     }
   }
 }
